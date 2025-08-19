@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {BrowserRouter,Routes, Route} from "react-router-dom" 
 import './App.css'
 import Header from './pages/Header';
-
+import Product from './pages/Product';
 function App() {
   return (
     
