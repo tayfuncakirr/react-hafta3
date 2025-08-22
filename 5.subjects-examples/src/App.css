@@ -5,6 +5,7 @@
 }
 /* HEADER START */
 .header-container {
+  position: fixed;
   width: 100%;
   height: 80px;
   background-color: rgb(232, 228, 236);
@@ -14,18 +15,152 @@
   margin-bottom: 20px;
 }
 .header-container .logo{
+  color: blueviolet;
   margin:0 20px;
 
 }
+
 .header-container .back {
   position: absolute;
   right: 20px;
   font-size: 18px;
+  
 }
 .header-container a {
   margin: 0 10px;
   font-size: 18px;
 }
+ .input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 550px;
+  background-color: #fff;
+  height: 50px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  padding-right: 5px;
+  margin-left: 50px;
+}
+.input-wrapper input {
+  height: 50px;
+  width: 450px;
+  background-color: transparent;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #808080;
+  
+}
+.input-wrapper div {
+  color: #fff;
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: auto;
+  cursor:pointer
+}
+
+/* CATEGORY - START*/
+.category-container {  
+  padding: 10px 50px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.category-wrapper {
+  text-align: center;
+}
+.category-wrapper h4{
+  color: rgb(94, 64, 122);
+}
+.category-container .category-image {
+  width: 50px;
+  margin: 0 30px;
+  transition: .2s ease-out;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  transform-style: preserve-3d; 
+}
+
+.category-container .category-wrapper:hover .category-image{
+  transform: perspective(500px) rotateY(40deg);
+  -webkit-transform: perspective(500px) rotateY(40deg);
+  -moz-transform: perspective(500px) rotateY(40deg);
+  -ms-transform: perspective(500px) rotateY(40deg);
+  -o-transform: perspective(500px) rotateY(40deg);
+}
+.filtered-item-container {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.filtered-item-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 5px 8px 15px rgb(117, 117, 117);
+  width: 700px;
+  min-height: 400px;
+  gap: 20px;
+  background-color: #fff;
+}
+.filtered-item-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 3px 5px 10px rgb(151, 151, 151);
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  transition: .2s ease-out;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+}
+.filtered-item-product:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.filtered-item-product img{
+  width: 70px;
+}
+.filtered-item-product .add-btn {
+  position: relative;
+  bottom: -10px;
+  width: 100%;
+  border: none;
+  background-color: rgba(128, 0, 255, 0.8);
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  color: #fff;
+}
+
 /* HOME START */
 .slider-container {
   position: relative;
@@ -52,6 +187,7 @@
   
 }
 
+
 /* ITEMS START */
 
 .items{
@@ -69,8 +205,7 @@
   flex-direction: column;
   text-align: left;
   width: 400px;
-  min-height: 500px;
-  
+  min-height: 550px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -95,8 +230,38 @@
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+.items-text{
+  width: 100%;
+  background-color: rgba(138, 43, 226,0.1);
+}
+
+.items-text h3:first-child {
+  color: blueviolet;
+}
+
+.items-text .add-btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: rgba(128, 0, 255, 0.8);
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  color: #fff;
+  transition: .2s ease-out;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+}
+.items-text .add-btn:hover {
+  opacity: 0.8;
+}
 
 .items-text * {
   padding-bottom: 10px;
+  padding-left: 10px;
 }
 

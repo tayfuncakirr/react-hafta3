@@ -12,6 +12,7 @@ function Items() {
                   <h3>{item.name}</h3>
                   <p>{item.title}</p>
                   <h3>{item.price} TL</h3>
+                  <button className='add-btn'>Sepete Ekle</button>
                  </div>
                 
             </div>

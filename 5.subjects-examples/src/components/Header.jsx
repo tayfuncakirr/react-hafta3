@@ -1,5 +1,6 @@
 import React from "react";
 import {Link, useNavigate} from "react-router-dom"
+import { FaSearch } from "react-icons/fa";
 
 
 function Header (){
@@ -12,6 +13,9 @@ function Header (){
          <Link to="/">Home</Link>
          <Link to="slide">Slide</Link>
          <Link to="Items">Items</Link>
+          <div className="input-wrapper">
+            <input type="search" placeholder="ürün veya marka ara" /><div><FaSearch/></div> 
+            </div>
         </div>
     )
 }

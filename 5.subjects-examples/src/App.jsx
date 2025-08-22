@@ -4,12 +4,14 @@ import Home from './pages/Home'
 import Slide from './pages/Slide'
 import Items from './pages/Items'
 import Header from "./components/Header"
+import Category from "./components/Category"
 
 function App() {
   
   return (
     <BrowserRouter>
     <Header/>
+    <Category/>
      <Routes>
       <Route path='/' index element={<Home/>}/>
       <Route path='slide' element={<Slide/>}/>
