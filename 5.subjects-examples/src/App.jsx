@@ -5,6 +5,7 @@ import Slide from './pages/Slide'
 import Items from './pages/Items'
 import Header from "./components/Header"
 import Category from "./components/Category"
+import ItemDetails from "./pages/ItemDetails"
 
 function App() {
   
@@ -14,7 +15,7 @@ function App() {
     <Category/>
      <Routes>
       <Route path='/' index element={<Home/>}/>
-      <Route path='slide' element={<Slide/>}/>
+      <Route path='/item-details/:id' element={<ItemDetails/>}/>
       <Route path='items' element={<Items/>}/>
      </Routes>
     </BrowserRouter>
