@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { categories, items } from './Data'
+import { useNavigate } from 'react-router-dom';
 
 
-function Category() {
+function Category({ addToBasket }) {
+    const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     const handleCategoryClick = (id) => {
@@ -35,12 +37,17 @@ function Category() {
 
        {selectedCategory && (
         <div className='filtered-item-container'>
-    <div className="filtered-item-list" onMouseLeave={()=> handleCategoryClick(null)}>
+    <div className="filtered-item-list"
+     onMouseLeave={()=> handleCategoryClick(null)}>
         { filteredItems.map(item => (
-          <div key={item.id} className="filtered-item-product">
+          <div key={item.id}
+            onClick={()=> navigate(`/item-details/${item.id}`)}
+            className="filtered-item-product">
             <img src={item.image} alt={item.name} />
             <h5>{item.name}</h5>
-            <button className='add-btn'>Sepete Ekle</button>
+            <button className='add-btn'
+             onClick={(e) => {e.stopPropagation(); addToBasket(item.id)}}>
+             Sepete Ekle</button>
           </div>
         ))}
       </div>

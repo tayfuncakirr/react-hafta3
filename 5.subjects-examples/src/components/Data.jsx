@@ -1,7 +1,7 @@
 import Televizyon from "./images/TV.jpg"
-//import Telefon from "./images/telefon.jpg"
+import SamsungS24 from "./images/samsungs24.jpg"
 import Tablet from "./images/tablet.jpg"
-//import Bilgisayar from "./images/bilgisayar.jpg"
+import Casper from "./images/casper.jpg"
 import Klavye from "./images/klavye.jpg"
 import PS5 from "./images/PS5.jpg"
 import Elektronik from "./images/elektronik.png"
@@ -29,11 +29,11 @@ export const items =[
         },
     {
        id:2,  
-        name:"Samsung s24 plus",
+        name:"Samsung S24 Ultra",
          title:"40mp front CAM 1920x1080 OLED Ekran telefon",
           description:"lorem ipsum dolor sit amet",
            price:30000,
-            image:Telefon,
+            image:SamsungS24,
              categoryId:4
          },
             
@@ -52,7 +52,7 @@ export const items =[
          title:"i7 12.nesil, 20 inch CASPER bilgisayar",
           description:"lorem ipsum dolor sit amet",
            price:25000,
-            image:Bilgisayar,
+            image:Casper,
              categoryId:2,
         },
     {
@@ -242,7 +242,7 @@ export const items =[
 
    {
        id:22, 
-        name:"Samsung Telefon",
+        name:"Samsung Galaxy A05s",
          title:"Samsung Galaxy A05s 4gb 128gb Siyah Akıllı Telefon",
           description:"lorem ipsum dolor sit amet",
            price:9999,
