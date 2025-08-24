@@ -46,7 +46,7 @@ function Category({ addToBasket }) {
             <img src={item.image} alt={item.name} />
             <h5>{item.name}</h5>
             <button className='add-btn'
-             onClick={(e) => {e.stopPropagation(); addToBasket(item.id)}}>
+             onClick={(e) => {e.stopPropagation(); addToBasket(item)}}>
              Sepete Ekle</button>
           </div>
         ))}

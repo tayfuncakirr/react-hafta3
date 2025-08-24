@@ -11,21 +11,28 @@ import { items } from "./components/Data"
 
 function App() {
   const [basket, setBasket] = useState([]);
+  
 
-  const addToBasket = (id) => {
-    const item = items.find((i) => i.id === id);
-    if (item) {
-      setBasket((prev) => [...prev, item]);
-    }
+  const addToBasket = (item) => {
+    const existingItem = basket.find((b) => b.id === item.id)
+
+    if (existingItem){
+    setBasket(
+      basket.map((b) =>
+        b.id === item.id ? {...b, quantity: b.quantity + 1 } :b
+      )
+    );
+  }
+  else {
+    setBasket ([...basket , {...item, quantity: 1}]);
+  }  
   };
-    
-
-
   
   return (
     <BrowserRouter>
     <Header/>
-    <Basket basket={basket}/>
+    <Basket basket={basket}
+    setBasket={setBasket}/>
     <Category addToBasket={addToBasket}/>
      <Routes>
       <Route path='/' index element={<Home/>}/>

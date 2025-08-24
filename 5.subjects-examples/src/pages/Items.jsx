@@ -15,7 +15,7 @@ function Items({ addToBasket }) {
                   <h3>{item.name}</h3>
                   <p>{item.title}</p>
                   <h3>{item.price} TL</h3>
-                  <button className='add-btn' onClick={(e) => {e.stopPropagation(); addToBasket(item.id)}}>
+                  <button className='add-btn' onClick={(e) => {e.stopPropagation(); addToBasket(item)}}>
                   Sepete Ekle</button>
                  </div>
                 
