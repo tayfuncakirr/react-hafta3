@@ -10,7 +10,7 @@ function Items({ addToBasket }) {
         {items && items.map((item) => (
             <div className='item-container' key={item.id}
             onClick={() =>navigate(`/item-details/${item.id}`)} >
-                 <img src={item.image} alt="" />
+                 <img src={item.images[0]} alt="" />
                  <div className='items-text'>
                   <h3>{item.name}</h3>
                   <p>{item.title}</p>

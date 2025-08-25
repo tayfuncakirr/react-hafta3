@@ -119,7 +119,7 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  z-index: 100;
 }
 .filtered-item-list {
   display: flex;
@@ -155,7 +155,7 @@ body {
   -o-transform: scale(1.1);
 }
 .filtered-item-product img{
-  width: 70px;
+  height: 70px;
 }
 .filtered-item-product .add-btn {
   position: relative;
@@ -226,7 +226,7 @@ body {
   cursor: pointer;
 }
 .item-container img{
-   width: 200px;
+   height: 200px;
    cursor:pointer;
    transition: .2s ease-out;
    -webkit-transition: .2s ease-out;
@@ -242,8 +242,11 @@ body {
   -o-transform: scale(1.1);
 }
 .items-text{
+  position: relative;
+  z-index: 1;
   width: 100%;
   background-color: rgba(138, 43, 226,0.1);
+  overflow: hidden;
 }
 
 .items-text h3:first-child {
@@ -333,6 +336,8 @@ body {
   z-index: 1000;
   background-color: #fff;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  max-height: 80vh;
+  overflow-y: auto;
   
 }
 .basket-container .basket-header {
@@ -414,7 +419,14 @@ body {
   border-radius: 3px;
   width: 60px;
   text-align: center;
-  
+  transition: .2s ease-out;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+}
+.basket-item-btn .basket-delete-btn:hover {
+  opacity: .8;
 }
 .basket-clear-all {
   width: 100%;
@@ -440,4 +452,65 @@ body {
   padding: 10px;
   color: #fff;
   background-color: blueviolet;
+}
+
+/* ITEM-DETAILS */
+.itemdetails-container{
+  border: 1px solid black;
+  margin-top: -20px;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.items-data {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255, 0, 0);
+}
+.items-details-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 50px;
+}
+.items-details-image .main-image {
+  object-fit: cover;
+  width: 400px;
+}
+.items-details-slide-image img {
+ height: 50px;
+}
+.items-details-text {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.items-details-text h2 {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.items-details-text h2:nth-child(3){
+  font-weight: 700;
+  font-size: 34px;
+  color: blueviolet;
+}
+
+.item-details-basket-btn {
+  margin-top: 10px;
+  width: 100%;
+  color: #fff;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
 }

@@ -43,7 +43,7 @@ function Category({ addToBasket }) {
           <div key={item.id}
             onClick={()=> navigate(`/item-details/${item.id}`)}
             className="filtered-item-product">
-            <img src={item.image} alt={item.name} />
+            <img src={item.images[0]} alt={item.name} />
             <h5>{item.name}</h5>
             <button className='add-btn'
              onClick={(e) => {e.stopPropagation(); addToBasket(item)}}>

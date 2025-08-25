@@ -23,7 +23,7 @@ function Basket({basket, setBasket}) {
                  basket.map((item, index) => (
                 <div className='basket-box' key={item.id}>
                 <div className='basket-items'>
-                 <img src={item.image} alt={item.name} />
+                 <img src={item.images[0]} alt={item.name} />
                 <p>{item.name} </p>
                 <p>{item.price} TL </p>
                 </div>
@@ -50,7 +50,7 @@ function Basket({basket, setBasket}) {
             ))
             ) : ( <p style={{textAlign:"center", padding:"10px", color:"blueviolet"}}>Sepetiniz boş</p>
             )}
-              {basket.length > 0 && ( <button className='basket-clear-all' onClick={()=>
+              {basket.length > 1 && ( <button className='basket-clear-all' onClick={()=>
                { if (window.confirm("Tüm Ürünleri Silmek İstediğinizden Emin Misiniz?")) {setBasket([])}
               }}
               >
