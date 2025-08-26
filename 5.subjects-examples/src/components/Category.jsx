@@ -41,7 +41,7 @@ function Category({ addToBasket }) {
      onMouseLeave={()=> handleCategoryClick(null)}>
         { filteredItems.map(item => (
           <div key={item.id}
-            onClick={()=> navigate(`/item-details/${item.id}`)}
+            onClick={()=> { navigate(`/item-details/${item.id}`); handleCategoryClick(null) ;} }
             className="filtered-item-product">
             <img src={item.images[0]} alt={item.name} />
             <h5>{item.name}</h5>

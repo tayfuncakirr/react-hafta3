@@ -129,6 +129,7 @@ body {
   box-shadow: 5px 8px 15px rgb(117, 117, 117);
   width: 700px;
   min-height: 400px;
+  padding:20px 0;
   gap: 20px;
   background-color: #fff;
 }
@@ -456,7 +457,7 @@ body {
 
 /* ITEM-DETAILS */
 .itemdetails-container{
-  border: 1px solid black;
+  
   margin-top: -20px;
   width: 100%;
   height: 70vh;
@@ -469,27 +470,50 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(255, 0, 0);
+  
 }
 .items-details-image {
+  height: 100%;
+  width: 500px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  margin-right: 50px;
+  overflow: hidden;
+  cursor: pointer;
 }
-.items-details-image .main-image {
+.main-image {
+  overflow: hidden;
+}
+.items-details-image .main-image img {
   object-fit: cover;
-  width: 400px;
+  height: 300px;
+  transition: .2s ease-out;
+  cursor: zoom-in;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
 }
+.items-details-image .main-image img:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
 .items-details-slide-image img {
- height: 50px;
+  padding: 0 5px;
+  height: 50px;
 }
 .items-details-text {
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
+  width: 400px;
   padding: 20px;
 }
 .items-details-text h2 {
@@ -513,4 +537,39 @@ body {
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
+}
+.modal-overlay {
+  position: fixed;
+  z-index: 1200;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content button {
+  padding: 10px;
+  font-size: 20px;
+  color: blueviolet;
+}
+.modal-content .prev,.next {
+  margin:0 20px
+}
+.modal-content .exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal-image {
+  width: 600px;
+  border-radius: 8px;
 }
