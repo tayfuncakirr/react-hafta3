@@ -1,29 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { items } from './Data';
+import { useNavigate } from 'react-router-dom';
 
-function SearchPage({searchTerm}) {
+function SearchPage({searchTerm, addToBasket, setIsOpen}) { 
+    const navigate = useNavigate ();
     if (!searchTerm.trim()) return null;
 
     const filtered = items.filter((item) => 
         item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
+
+     
+     
   return (
-    <div className='search-wrapper'>
-        <div className="search-container">
+             
+           <div className="search-container" onMouseLeave={() => setIsOpen(false)}>
                 {
-                    filtered.length > 0 ? (
+                    filtered.length > 0  ? (
                         filtered.map((item) => (
-                            <div key={item.id} className="search-box">
+                            <div key={item.id} className="search-box" onClick={()=> {navigate(`/item-details/${item.id}`); setIsOpen(false)}}>
                             <img src={item.images[0]} alt={item.name} />
-                            <p>{item.name}</p>
-                            <p>{item.price}</p>
+                            <h5>{item.name}</h5>
+                            <button onClick={(e) => {e.stopPropagation(); addToBasket(item)}}>Sepete Ekle</button>
                             </div>
                         ))
                     ): ( <p>Sonuç bulunamadı</p> )
                 }
         </div>
-    </div>
   )
 }
 

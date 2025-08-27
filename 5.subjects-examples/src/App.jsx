@@ -6,15 +6,23 @@ import Header from "./components/Header"
 import Category from "./components/Category"
 import ItemDetails from "./pages/ItemDetails"
 import Basket from "./components/Basket"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { items } from "./components/Data"
 import SearchPage from "./components/SearchPage"
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [basket, setBasket] = useState([]);
 
-
+useEffect(()=>{
+        if (searchTerm.trim()) {
+        setIsOpen(true)
+     }
+     else {
+        setIsOpen(false)
+     }
+     },[searchTerm])
   
 
   const addToBasket = (item) => {
@@ -36,7 +44,7 @@ function App() {
     <BrowserRouter>
     <Header searchTerm = {searchTerm} setSearchTerm = {setSearchTerm}/>
     <Basket basket={basket} setBasket={setBasket} searchTerm={searchTerm}/>
-    <SearchPage searchTerm={searchTerm}/>
+    {isOpen && (<SearchPage searchTerm={searchTerm} addToBasket ={addToBasket} setIsOpen={setIsOpen} />)}
     <Category addToBasket={addToBasket}/>
      <Routes>
       <Route path='/' index element={<Home/>}/>
