@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 
 
-function Header (){
+function Header ({searchTerm, setSearchTerm}){
     const navigate = useNavigate();
     return (
          <div className="header-container">
@@ -13,9 +13,15 @@ function Header (){
          <div className="back"><a style={{cursor:"pointer"}} onClick={()=> navigate(-1)}>Geri</a></div>
          <Link to="/">Home</Link>
          <Link to="Items">Items</Link>
-         <Link to="slide">Slide</Link>
+         <Link to="slide">Contact</Link>
           <div className="input-wrapper">
-            <input type="search" placeholder="ürün veya marka ara" /><div><FaSearch/></div> 
+            <input
+             type="text"
+             placeholder="ürün veya marka ara" 
+             value={searchTerm}
+             onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <div><FaSearch/></div> 
             </div>
         </div>
     )

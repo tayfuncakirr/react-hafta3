@@ -8,9 +8,13 @@ import ItemDetails from "./pages/ItemDetails"
 import Basket from "./components/Basket"
 import { useState } from "react"
 import { items } from "./components/Data"
+import SearchPage from "./components/SearchPage"
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [basket, setBasket] = useState([]);
+
+
   
 
   const addToBasket = (item) => {
@@ -30,9 +34,9 @@ function App() {
   
   return (
     <BrowserRouter>
-    <Header/>
-    <Basket basket={basket}
-    setBasket={setBasket}/>
+    <Header searchTerm = {searchTerm} setSearchTerm = {setSearchTerm}/>
+    <Basket basket={basket} setBasket={setBasket} searchTerm={searchTerm}/>
+    <SearchPage searchTerm={searchTerm}/>
     <Category addToBasket={addToBasket}/>
      <Routes>
       <Route path='/' index element={<Home/>}/>

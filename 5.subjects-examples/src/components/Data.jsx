@@ -255,7 +255,7 @@ export const items =[
    {
        id:23, 
         name:"Apple Iphone 16",
-         title:"IPHONE 16 plus 1 TB",
+         title:"IPHONE 16 plus 1 TB Telefon",
           description:"lorem ipsum dolor sit amet",
            price:50000,
             images:["/images/iphone16.jpg", "/images/iphone16-1.jpg", "/images/iphone16-2.jpg"],
@@ -265,8 +265,8 @@ export const items =[
 
    {
        id:24, 
-        name:"APPLE Iphone 11",
-         title:"IPHONE 11 plus 500 GB",
+        name:"APPLE Iphone 11 ",
+         title:"IPHONE 11 plus 500 GB Telefon",
           description:"lorem ipsum dolor sit amet",
            price:15000,
             images:["/images/iphone11.jpg", "/images/iphone11-1.jpg", "/images/iphone11-2.jpg", "/images/iphone11-3.jpg"],
@@ -277,7 +277,7 @@ export const items =[
       {
        id:25, 
         name:"APPLE Iphone 13",
-         title:"IPHONE 13 pro max 500 GB",
+         title:"IPHONE 13 pro max 500 GB Telefon",
           description:"lorem ipsum dolor sit amet",
            price:35000,
             images:["/images/iphone13.jpg", "/images/iphone13-1.jpg"],
