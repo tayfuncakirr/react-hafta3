@@ -7,8 +7,6 @@ function Basket({basket, setBasket}) {
     const totalPrice = basket.reduce((acc,item) => acc + item.price*item.quantity, 0);
     const totalItems = basket.reduce((acc,item) => acc + item.quantity, 0);
     
-    
-
   return (
           <>
           <div className='basket-icon-container' 

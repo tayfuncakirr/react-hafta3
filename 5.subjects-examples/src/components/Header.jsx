@@ -2,8 +2,6 @@ import React from "react";
 import {Link, useNavigate} from "react-router-dom"
 import { FaSearch } from "react-icons/fa";
 
-
-
 function Header ({searchTerm, setSearchTerm}){
     const navigate = useNavigate();
     return (
@@ -13,7 +11,7 @@ function Header ({searchTerm, setSearchTerm}){
          <div className="back"><a style={{cursor:"pointer"}} onClick={()=> navigate(-1)}>Geri</a></div>
          <Link to="/">Home</Link>
          <Link to="Items">Items</Link>
-         <Link to="slide">Contact</Link>
+         <Link to="contact">Contact</Link>
           <div className="input-wrapper">
             <input
              type="text"

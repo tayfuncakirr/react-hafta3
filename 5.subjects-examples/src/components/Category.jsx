@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { categories, items } from './Data'
 import { useNavigate } from 'react-router-dom';
 
-
 function Category({ addToBasket }) {
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState(null);
