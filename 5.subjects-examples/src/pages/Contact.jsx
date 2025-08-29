@@ -13,6 +13,8 @@ function Contact() {
  
     })
   return (
+    <div className="form-wrapper">
+
     <div className='form-container'>
        <Formik
        initialValues={{
@@ -31,26 +33,26 @@ function Contact() {
             {({isSubmitting, errors, touched})=>(
                 <Form>
                 <div>
-                <label htmlFor="firstName"></label>
+                <label htmlFor="firstName">Ad</label>
                 <Field id="firstName" name="firstName" placeholder="Adınız..." disabled={isSubmitting}/>
 
                 {errors.firstName && touched.firstName && <div className="error">{errors.firstName}</div>}
             </div>
             <div>
-                <label htmlFor="lastName"></label>
+                <label htmlFor="lastName">Soyad</label>
                 <Field id="lastName" name="lastName" placeholder="Soyadınız..." disabled={isSubmitting}/>
 
                 {errors.lastName && touched.lastName && <div className="error">{errors.lastName}</div> }
             </div>
             <div>
-                <label htmlFor="email"></label>
+                <label htmlFor="email">Email</label>
                 <Field id="email" name="email" type="email" placeholder="Email adresiniz..." disabled={isSubmitting}/>
 
                 {errors.email && touched.email && <div className="error">{errors.email}</div> }
             </div>
             <div>
-                <label htmlFor="message"></label>
-                <Field as="textarea  " id="message" name="message" placeholder="Mesajınız..." disabled={isSubmitting}/>
+                <label htmlFor="message">Mesaj</label>
+                <Field as="textarea" id="message" name="message" placeholder="Mesajınız..." disabled={isSubmitting}/>
 
                 {errors.message && touched.message && <div className="error">{errors.message}</div> }
             </div>
@@ -58,6 +60,7 @@ function Contact() {
             </Form>)}
         
        </Formik>
+    </div>
     </div>
         
   )

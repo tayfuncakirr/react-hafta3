@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { items } from './Data';
 import { useNavigate } from 'react-router-dom';
 
-function SearchPage({searchTerm, addToBasket, setIsOpen}) { 
+function SearchPage({searchTerm, setIsOpen}) { 
     const navigate = useNavigate ();
     if (!searchTerm.trim()) return null;
 
@@ -22,7 +22,6 @@ function SearchPage({searchTerm, addToBasket, setIsOpen}) {
                             <div key={item.id} className="search-box" onClick={()=> {navigate(`/item-details/${item.id}`); setIsOpen(false)}}>
                             <img src={item.images[0]} alt={item.name} />
                             <h5>{item.name}</h5>
-                            <button onClick={(e) => {e.stopPropagation(); addToBasket(item)}}>Sepete Ekle</button>
                             </div>
                         ))
                     ): ( <p>Sonuç bulunamadı</p> )
